@@ -1,0 +1,73 @@
+<h2 style="color: blue">Search Machine</h2>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Your Machines</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let machine of machineList">
+    <td>{{machine.name}}</td>
+    <td>
+      <form class="mb-5" (submit)="startMachine(machine)">
+      <button type="submit" class="btn btn-success" >Start</button>
+    </form>
+    </td>
+    <td>
+      <form class="mb-5" (submit)="stopMachine(machine)">
+        <button type="submit" class="btn btn-secondary">Stop</button>
+      </form>
+    </td>
+    <td>
+      <form class="mb-5" (submit)="restartMachine(machine)">
+        <button type="submit" class="btn btn-primary">Restart</button>
+      </form>
+    </td>
+    <td>
+      <form class="mb-5" (submit)="destroyMachine(machine)">
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+<div>
+  <form class="mb-5" (submit)="searchMachines(searchPerName, searchPerStatus, searchPerStartDate, searchPerEndDate)">
+    <div class="form-group mb-2">
+      <label style="color:green" for="machineName">Search_Per_Name</label>
+      <input type="text" [(ngModel)]="searchPerName" [ngModelOptions]="{standalone:true}" class="form-control" id="machineName" name="name">
+    </div>
+    <div class="form-group mb-2">
+      <label style="color:green" for="machineStatus">Search_Per_Status</label>
+      <input type="text" [(ngModel)]="searchPerStatus" [ngModelOptions]="{standalone:true}" class="form-control" id="machineStatus" name="status">
+    </div>
+    <div class="form-group mb-2">
+      <label style="color:green" for="machineStart">Search_Per_Start_Date</label>
+      <input type="text" [(ngModel)]="searchPerStartDate" [ngModelOptions]="{standalone:true}" class="form-control" id="machineStart" name="startDate">
+    </div>
+    <div class="form-group mb-2">
+      <label style="color:green" for="machineEnd">Search_Per_End_Date</label>
+      <input type="text" [(ngModel)]="searchPerEndDate" [ngModelOptions]="{standalone:true}" class="form-control" id="machineEnd" name="endDate">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Searched Machines</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let m of machineSearchList">
+    <td>{{m.name}}</td>
+    <td>{{m.status}}</td>
+    <td>{{m.angularDate}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<!-- Gresku mi baca jer ne zna da iterira kroz 201 odgovor kad treba da mi vrati prznu listu -->

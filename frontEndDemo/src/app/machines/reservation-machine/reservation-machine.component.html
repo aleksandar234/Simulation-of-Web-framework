@@ -1,0 +1,33 @@
+<h2 style="color: blue">Reserve Machine</h2>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Your Machines</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let machine of machineList">
+
+    <td>{{machine.name}}</td>
+    <td>
+        <label for="fname">yyyy:MM:dd:HH:mm</label>
+        <input type="text" id="fname" [(ngModel)]="date" name="fname">
+    </td>
+    <td>
+      <form class="mb-5" (submit)="reserveStartMachine(machine)">
+        <button type="submit" class="btn btn-success" >ReserveStart</button>
+      </form>
+    </td>
+    <td>
+      <form class="mb-5" (submit)="reserveStopMachine(machine)">
+        <button type="submit" class="btn btn-secondary">ReserveStop</button>
+      </form>
+    </td>
+    <td>
+      <form class="mb-5" (submit)="reserveRestartMachine(machine)">
+        <button type="submit" class="btn btn-primary">ReserveRestart</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>

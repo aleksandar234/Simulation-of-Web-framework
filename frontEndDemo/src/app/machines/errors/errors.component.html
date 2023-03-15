@@ -1,0 +1,17 @@
+<h2 style="color: blue">Error Massage</h2>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">MachineError</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let machine of errorList">
+    <td>MachineId: {{machine.machineId}}</td>
+    <td>Date: {{machine.date}}</td>
+    <td>Operation: {{machine.reservedOperation}}</td>
+    <td>Massage: {{machine.errorMassage}}</td>
+  </tr>
+  </tbody>
+</table>
+

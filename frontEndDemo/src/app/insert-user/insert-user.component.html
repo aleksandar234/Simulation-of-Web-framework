@@ -1,0 +1,43 @@
+<div>
+  <div>
+    <h2 style="color: blue">Insert User</h2>
+    <form class="mb-5" (submit)="insertUser()">
+      <div class="form-group mb-2">
+        <label for="firstName"><b>FirstName</b></label>
+        <input type="text" class="form-control" id="firstName" [(ngModel)]="firstName" name="name" required>
+      </div>
+      <div class="form-group mb-2">
+        <label for="lastName"><b>LastName</b></label>
+        <input type="text" class="form-control" id="lastName" [(ngModel)]="lastName" name="name" required>
+      </div>
+      <div class="form-group mb-2">
+        <label for="username"><b>Username</b></label>
+        <input type="text" class="form-control" id="username" [(ngModel)]="username" name="name" required>
+      </div>
+      <div class="form-group mb-2">
+        <label for="password"><b>Password</b></label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="password" name="name" required>
+      </div>
+
+      <label><b>PermissionsForUsers</b></label>
+      <div class="chBox" style="padding: 10px">
+        <label><input type="checkbox" [(ngModel)]="create" [ngModelOptions]="{standalone:true}">CREATE</label><code>{{changeValue(create)}}</code>
+        <label style="padding-left: 10px"><input type="checkbox" [(ngModel)]="read" [ngModelOptions]="{standalone:true}">READ</label><code>{{changeValue(read)}}</code>
+        <label style="padding-left: 10px"><input type="checkbox" [(ngModel)]="update" [ngModelOptions]="{standalone:true}">UPDATE</label><code>{{changeValue(update)}}</code>
+        <label style="padding-left: 10px"><input type="checkbox" [(ngModel)]="delete" [ngModelOptions]="{standalone:true}">DELETE</label><code>{{changeValue(delete)}}</code>
+      </div>
+      <label><b>PermissionsForMachines</b></label>
+      <div class="chBox" style="padding: 10px">
+        <label><input type="checkbox" [(ngModel)]="searchMachine" [ngModelOptions]="{standalone:true}">SEARCH_MACHINE</label><code>{{changeValue(searchMachine)}}</code>
+        <label style="padding-left: 10px"><input type="checkbox" [(ngModel)]="startMachine" [ngModelOptions]="{standalone:true}">START_MACHINE</label><code>{{changeValue(startMachine)}}</code>
+        <label style="padding-left: 10px"><input type="checkbox" [(ngModel)]="stopMachine" [ngModelOptions]="{standalone:true}">STOP_MACHINE</label><code>{{changeValue(stopMachine)}}</code>
+        <label style="padding-left: 10px"><input type="checkbox" [(ngModel)]="restartMachine" [ngModelOptions]="{standalone:true}">RESTART_MACHINE</label><code>{{changeValue(restartMachine)}}</code>
+        <label style="padding-left: 10px"><input type="checkbox" [(ngModel)]="createMachine" [ngModelOptions]="{standalone:true}">CREATE_MACHINE</label><code>{{changeValue(createMachine)}}</code>
+        <label style="padding-left: 10px"><input type="checkbox" [(ngModel)]="destroyMachine" [ngModelOptions]="{standalone:true}">DESTROY_MACHINE</label><code>{{changeValue(destroyMachine)}}</code>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Insert</button>
+    </form>
+
+  </div>
+</div>
