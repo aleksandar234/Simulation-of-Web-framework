@@ -20,7 +20,9 @@ import java.io.IOException;
 
 /**
  * Ovo je konkretna implementacija Filtera ili ti interseptora
- * Koji dekoduje token, proverava njegovu validnost i ukoliko je token validan vraca nazad
+ * Koji dekoduje token, proverava njegovu validnost i ukoliko je token validan vraca nazad.
+ * U sustini JWTFilter je odgovoran za proveru i obradu JWT tokena usvakom zahtevu, pruzajuci na taj nacin
+ * autentifikaciju korisnika u sistemu.
  */
 
 @CrossOrigin(origins = "http://localhost:4200")
