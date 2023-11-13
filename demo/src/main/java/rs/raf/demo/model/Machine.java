@@ -7,7 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.List;
-
+// Ova anotacija oznacava klasu kao JPA (Java Persistens API) entitet, sto znaci da ce biti mapirana na tabelu u bazi podataka
 @Entity
 public class Machine {
 
