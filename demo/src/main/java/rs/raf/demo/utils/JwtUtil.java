@@ -46,6 +46,7 @@ public class JwtUtil {
     }
 
     // Ova metoda validira JWT token. Proverava da li korisnicko ime u tokenu odgovara korisnickom imenu koje se nalazi u UserDetails objektu i dal je token istekao.
+    // Ovaj UserDetails je javina klasa. Tj je interfejs u Spring Security framework-u koja predstavlja informacije o korisniku potrebne za auth i autent.
     public boolean validateToken(String token, UserDetails user) {
         return (user.getUsername().equals(extractUsername(token)) && !isTokenExpired(token));
     }
